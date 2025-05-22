@@ -210,62 +210,86 @@ header {
   height: 90%;
 
 }
-.form{
-
-    padding: 30px 0px 0px 140px;
-    background-color: #ab0309;
-    color: white;
-
+.form {
+  padding: 30px 50px;
+  background-color: #ab0309;
+  color: white;
+  font-family: sans-serif;
 }
-.info
-{
+
+.info, .info1 {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
 
+.column-one {
+  flex: 1 1 30%;
+  min-width: 250px;
+  margin-bottom: 10px;
 }
-.info1
-{
+
+
+.column-one p {
+  margin: 0 0 8px;
+  font-weight: bold;
   display: flex;
- 
+  flex-direction: column;
 }
-.column-one
-{
-  width: 23%;
-  margin-bottom: 10px !important; 
-  
+
+
+.column-one input[type="text"],
+.column-one input[type="email"],
+.column-one input[type="number"],
+.column-one input[type="date"],
+.column-one select,
+.column-one textarea {
+  color: #626262;
+  background-color: #fff;
+  border: 1px solid #EBEBEB;
+  padding: 12px;
+  border-radius: 15px;
+  width: 85%; 
+  box-sizing: border-box;
 }
-.column-one .name
-{
-  display: block;
-}
-.column-one input[type="date"], input[type="email"], input[type="text"], input[type="number"],input[type="date"], select, textarea, .dark input[type="email"], .dark input[type="text"], .dark textarea {
-    color: #626262;
-    background-color: rgba(255, 255, 255, 1);
-    border-color: #EBEBEB;
-    padding: 12px;
-    border-radius: 15px;
-    width: 80%;
-}
-.column-one button
-{
-   color: white;
-    background-color:#385874;
+
+
+.column-one button {
+  color: white;
+  background-color: #385874;
   border: none;
-    padding: 12px;
-    border-radius: 15px;
-    width: 80%;
-    margin-top: 1.6rem;
+  padding: 12px;
+  border-radius: 15px;
+  width: 85%;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
-@media (max-width:800px) {
-  .info ,.info1
-  {
-    display: block;
+.column-one button:hover {
+  background-color: #2c4a5e;
+}
+
+
+@media (max-width: 800px) {
+  .info, .info1 {
+    flex-direction: column;
   }
-  .main img
-  {
+
+  .column-one {
     width: 100%;
   }
+
+  .column-one input,
+  .column-one select,
+  .column-one button {
+    width: 30%;
+  }
 }
+
 .cars{
   background-color:#eeeeee;
   padding-bottom: 7rem;
@@ -297,92 +321,108 @@ font-family: "Poppins", Helvetica, Arial, sans-serif;
   font-size: 110%;
 }
 
-.about-cars 
-{
-  display: block;
-  justify-content: space-between;
-  text-align: center;
-  align-items: center ;
- 
+.about-cars {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
-.row1 
-{
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  align-items: center ;
-}
-.row2
-{
-  display: flex;
-  text-align: center;
-  align-items: center ;
-  margin-top: 2rem;
-}
-.car1
-{
-  display: block;
+
+.car1, .car2 {
   background-color: #fff;
-  border: white;
-  margin-top: 0.5rem;
- height: 100%;
- box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 2rem;
+}
+
+.car1:hover, .car2:hover {
+  box-shadow: 0 10px 20px rgba(171, 3, 9, 0.3);
+  transform: translateY(-5px);
+}
+
+.car-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
   border-radius: 8px;
+}
+
+.car-title, .car2-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ab0309;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.car-body p, .car2-body p {
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.2rem 0;
+  
   
 }
-.car1:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-.cars button{
- background-color: #ab0309;
- color:#fff; 
- border:none;
- width: 40%;
- border-radius: 7px;
-padding-top: 8px ;
-padding-bottom: 8px;
-}
-.cars button i{
-  margin-right: 0.5rem;
-}
-.cars button:hover
-{
-  background: #000;
-}
-.car-title{
-  font-weight: 600;
-  font-size: 123%;
-  padding-top: 4rem;
-  color: #000;
-}
-.car-body p{
-  color: #000;
-}
-.car1-img-top, .car2-img-top
-{
-  width: 100%;
- padding-top: 1rem;
+.features-row .feature-item {
+  padding: 0.5rem;
+  min-width: 90px;
 }
 
-.car2
-{
-  display: block;
-   background-color: #fff;
-  border: white;
-  margin-top: 3rem;
-  height: 100%;
- box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+.features-row p,
+.features-row small {
+  text-align: center;
+  margin-top: 0.25rem;
+  word-break: break-word;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+
+.about-cars button {
+  background-color: #ab0309;
+  color: white;
+  border: none;
+  padding: 10px 25px;
   border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1.5rem auto 0; 
+  width: 60%;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+@media (max-width: 576px) {
+  .about-cars button {
+    width: 90%; 
+  }
+}
 
+
+
+.about-cars button i {
+  font-size: 1.1rem;
 }
-.car2 h5{
-  font-weight: 600;
-  font-size: 123%;
-  padding-top: 4rem;
+
+.about-cars button:hover {
+  background-color: #7a0206;
 }
-.car2:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+
+@media (max-width: 576px) {
+ .about-cars button {
+    width: 80%;
+  }
 }
+
 .welcome {
   background-image: url("./assests/jaipur.webp");
   background-position: center;
@@ -396,17 +436,17 @@ padding-bottom: 8px;
   height: 100%;
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-margin-top: -100px;
+
 
 }
 .nahargarh
 {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 50%;
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-margin-top: 1rem;
+
 
 }
 .welcome h1{
